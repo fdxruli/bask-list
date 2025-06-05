@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pase de Lista Mejorado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Pase de Lista Mejorado</h1>
+            <p>Sistema de Control de Asistencia y Adeudos</p>
+        </div>
+
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab active" data-tab="manage">Gestionar</button>
+                <button class="tab" data-tab="attendance">Asistencia</button>
+                <button class="tab" data-tab="debts">Adeudos</button>
+                <button class="tab" data-tab="history">Historial</button>
+            </div>
+        </div>
+
+        <!-- Tab: Gestionar Personas -->
+        <div id="manage" class="tab-content active">
+            <div class="input-group">
+                <label for="personName">Agregar Nueva Persona:</label>
+                <input type="text" id="personName" placeholder="Nombre completo">
+            </div>
+            <button class="btn btn-primary" id="addPersonBtn">➕ Agregar Persona</button>
+            <div class="person-list" id="personList"></div>
+        </div>
+
+        <!-- Tab: Pase de Asistencia -->
+        <div id="attendance" class="tab-content">
+            <div class="summary-stats" id="attendanceStats">
+                <div class="stat-card">
+                    <div class="stat-number" id="presentCount">0</div>
+                    <div class="stat-label">Presentes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="absentCount">0</div>
+                    <div class="stat-label">Ausentes</div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="startAttendanceBtn">📝 Iniciar Pase de Lista</button>
+            <button class="btn btn-info" id="shareAttendanceBtn">📤 Compartir por WhatsApp</button>
+            <button class="btn btn-danger" id="finishAttendanceBtn">🏁 Finalizar Lista</button>
+
+            <div id="attendanceList"></div>
+        </div>
+
+        <!-- Tab: Adeudos -->
+        <div id="debts" class="tab-content">
+            <div class="summary-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalDebt">$0</div>
+                    <div class="stat-label">Total Adeudos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="debtorsCount">0</div>
+                    <div class="stat-label">Personas con Deuda</div>
+                </div>
+            </div>
+
+            <button class="btn btn-info" id="shareDebtsBtn">📤 Compartir Adeudos</button>
+            <div id="debtsList"></div>
+        </div>
+
+        <!-- Tab: Historial -->
+        <div id="history" class="tab-content">
+            <button class="btn btn-danger" id="clearAllDataBtn">🗑️ Limpiar Todo</button>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <script src="appp.js"></script>
+</body>
+</html>
